@@ -4,7 +4,6 @@ import {InputForm} from './InputForm/InputForm';
 import {ContactList} from './ContactList/ContactList';
 import { useSelector } from 'react-redux';
 import {SearchContact} from './SearchContact/SearchContact';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
 
