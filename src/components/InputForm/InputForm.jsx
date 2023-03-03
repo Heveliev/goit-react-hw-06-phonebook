@@ -8,7 +8,7 @@ import { nanoid } from 'nanoid';
 
 const InputForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts)
+  const contacts = useSelector(state => state.contacts.items)
 
 
   const handleSubmit = evt => {

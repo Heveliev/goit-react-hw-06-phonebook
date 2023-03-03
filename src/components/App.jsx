@@ -8,11 +8,7 @@ import {SearchContact} from './SearchContact/SearchContact';
 
 
 const App = () => {
-  const contacts = useSelector(state => state.contacts)
-
-  
-//   useEffect(()=>{localStorage.setItem('contacts', JSON.stringify(contacts))},[contacts])
-
+  const contacts = useSelector(state => state.contacts.items)
 
   return (
     <>
@@ -22,7 +18,9 @@ const App = () => {
      </Section>
        <Section title='Contacts' >
         <SearchContact/>
-        {contacts.length ? <ContactList/> : <p>Sorry but you don't have contacts!</p>} 
+                  {contacts.length ?
+          <ContactList />
+          : <p>Sorry but you don't have contacts!</p>} 
        </Section>
        </>
   )
