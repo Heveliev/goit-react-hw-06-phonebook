@@ -1,4 +1,4 @@
-// import {useState,useEffect} from 'react';
+
 import { Section } from './Section/Section';
 import {InputForm} from './InputForm/InputForm';
 import {ContactList} from './ContactList/ContactList';
@@ -10,22 +10,8 @@ import {SearchContact} from './SearchContact/SearchContact';
 const App = () => {
   const contacts = useSelector(state => state.contacts)
 
-//   const [filter, setFilter] = useState('');
   
 //   useEffect(()=>{localStorage.setItem('contacts', JSON.stringify(contacts))},[contacts])
-
-
-// const  filterContactsFunc = ()=>{
-//    const normaliaedFilter = filter.toLowerCase();
-//   return contacts.filter(contact=>contact.name.toLowerCase().includes(normaliaedFilter));
-//  }
-
-  
-//   const searchHandle = evt => {
-//     const evtTarget = evt.currentTarget.value;
-//     setFilter(evtTarget)
-//   }
-
 
 
   return (
@@ -35,10 +21,7 @@ const App = () => {
         />
      </Section>
        <Section title='Contacts' >
-        <SearchContact
-          // value={filter}
-          // onChange={searchHandle}
-        />
+        <SearchContact/>
         {contacts.length ? <ContactList/> : <p>Sorry but you don't have contacts!</p>} 
        </Section>
        </>

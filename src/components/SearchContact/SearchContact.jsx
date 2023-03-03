@@ -1,14 +1,21 @@
 import { Input } from "./SearchContact.styled";
-// import PropTypes from 'prop-types';
+import { useDispatch } from "react-redux";
+import { filter } from "redux/filterSlice/filterSlice";
 
-// {value, onChange}
-export const SearchContact = ()=>{
+
+export const SearchContact = () => {
+    const dispatch = useDispatch();
+
+      const filterContacts = evt => {
+    const evtTarget = evt.currentTarget.value.toLowerCase();
+    dispatch(filter(evtTarget)) 
+  }
     return(
         <>
         <h4>Find contacts by name</h4>
         <Input
-        // value={value}
-        // onChange={onChange}
+
+        onChange={filterContacts}
     type="text"
     name="name"
     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -18,7 +25,3 @@ export const SearchContact = ()=>{
         </>
     )
 }
-// SearchContact.propTypes = {
-//     value:PropTypes.string.isRequired ,
-//     onChange:PropTypes.func.isRequired
-// }

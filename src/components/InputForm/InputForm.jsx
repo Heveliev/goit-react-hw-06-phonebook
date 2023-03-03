@@ -1,8 +1,8 @@
-  // import PropTypes from 'prop-types';
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Input } from 'components/Input/Input';
 import { Box, Btn } from './InputForm.styled';
-import { add } from 'redux/store';
+import { add } from 'redux/contactsSlice/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 
@@ -10,14 +10,10 @@ const InputForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts)
 
-  //   const  formSubmitHandler = data =>{
-//     const {name,number} = data;
-
 
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = evt.currentTarget
-    //  form.elements.name.value
     const name = form.elements.name.value;
     const number = form.elements.number.value
        if (contacts.find(contact=>contact.name === name) ){
